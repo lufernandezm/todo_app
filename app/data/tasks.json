@@ -38,5 +38,10 @@
         "id": 8,
         "description": "go to the mall",
         "completed": true
+    },
+    {
+        "id": 9,
+        "description": "test the app",
+        "completed": false
     }
 ]

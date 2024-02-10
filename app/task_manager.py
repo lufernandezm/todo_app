@@ -7,7 +7,7 @@ def add_task():
     new_task = {"id": len(tasks) + 1, "description": description, "completed": False}
     tasks.append(new_task)
     save_tasks(tasks)
-    print(f"Task added: {description}")
+    print_bold(f"Task added: {description}")
 
 
 def get_tasks():
@@ -27,7 +27,7 @@ def format_task(index, task_list):
 
 
 def print_task_header():
-    print(f"\n{'Completed Tasks':<30} | {'Pending Tasks'}")
+    print_bold(f"\n{'Completed Tasks':<30} | {'Pending Tasks'}")
     print("-" * 60)
 
 
