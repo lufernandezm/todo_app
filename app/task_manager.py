@@ -2,12 +2,17 @@ from storage import save_tasks, load_tasks
 from utils import print_bold
 
 def add_task():
-    description = input("Enter a brief description of the new task: ")
-    tasks = load_tasks()
-    new_task = {"id": len(tasks) + 1, "description": description, "completed": False}
-    tasks.append(new_task)
-    save_tasks(tasks)
-    print_bold(f"Task added: {description}")
+    description = input('Enter task description: ').strip()
+    if not description:
+        raise ValueError('Task description is required')
+
+    pending_tasks = [task for task in load_tasks() if not task['completed']]
+    if any(task['description'] == description for task in pending_tasks):
+        raise ValueError('Task description must be unique among pending tasks')
+
+    task = {'id': len(pending_tasks) + 1, 'description': description, 'completed': False}
+    save_tasks(pending_tasks + [task])
+    print_bold('Task added: ' + description)
 
 
 def get_tasks():
