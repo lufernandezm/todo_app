@@ -19,18 +19,24 @@ def get_menu_option():
     return option
 
 def handle_option(option):
-    if option == 1:
-        add_task()
-    elif option == 2:
-        list_tasks()
-    elif option == 3:
-        select_task_to_complete()
-    elif option == 4:
-        print_bold("Good bye! :)")
-        return False
-    else:
-        print_bold("Invalid option, please try again.")
-    return True
+    try:
+        if option == 1:
+            add_task()
+        elif option == 2:
+            list_tasks()
+        elif option == 3:
+            select_task_to_complete()
+        elif option == 4:
+            print_bold("Good bye! :)")
+            return False
+        else:
+            print_bold("Invalid option, please try again.")
+        return True
+    except Exception as e:
+        print_bold(e)
+        return True
+
+
 
 def main(option=default_option):
     while True:

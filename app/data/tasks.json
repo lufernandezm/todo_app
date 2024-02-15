@@ -1,47 +1,27 @@
 [
     {
-        "id": 1,
-        "description": "buy a tomato ",
-        "completed": true
-    },
-    {
-        "id": 2,
-        "description": "buy coffe ",
-        "completed": true
-    },
-    {
         "id": 3,
         "description": "go to the gym",
         "completed": false
     },
     {
+        "id": 9,
+        "description": "test the app",
+        "completed": false
+    },
+    {
+        "id": 3,
+        "description": "example",
+        "completed": false
+    },
+    {
         "id": 4,
-        "description": "get a job",
-        "completed": true
+        "description": "try",
+        "completed": false
     },
     {
         "id": 5,
-        "description": "do homework",
-        "completed": true
-    },
-    {
-        "id": 6,
-        "description": "help mom",
-        "completed": true
-    },
-    {
-        "id": 7,
-        "description": "run",
-        "completed": true
-    },
-    {
-        "id": 8,
-        "description": "go to the mall",
-        "completed": true
-    },
-    {
-        "id": 9,
-        "description": "test the app",
+        "description": "asdf",
         "completed": false
     }
 ]
