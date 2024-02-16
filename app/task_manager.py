@@ -6,12 +6,14 @@ def add_task():
     if not description:
         raise ValueError('Task description is required')
 
-    pending_tasks = [task for task in load_tasks() if not task['completed']]
+    completed_tasks, pending_tasks = get_tasks()
     if any(task['description'] == description for task in pending_tasks):
         raise ValueError('Task description must be unique among pending tasks')
-
-    task = {'id': len(pending_tasks) + 1, 'description': description, 'completed': False}
-    save_tasks(pending_tasks + [task])
+    
+    len_tasks=len(pending_tasks)+len(completed_tasks)
+    task = {'id': len_tasks + 1, 'description': description, 'completed': False}
+    tasks=completed_tasks+pending_tasks+[task]
+    save_tasks(tasks)
     print_bold('Task added: ' + description)
 
 
