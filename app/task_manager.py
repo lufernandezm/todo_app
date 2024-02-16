@@ -20,7 +20,7 @@ def add_task():
 def get_tasks():
     tasks = load_tasks()
     if not tasks:
-        print_bold("No tasks found.")
+        print("No tasks found.")
         return[],[]
 
     completed_tasks = [task for task in tasks if task["completed"]]
